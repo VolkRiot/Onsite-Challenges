@@ -13,13 +13,14 @@ class modalMaker {
 
     this.offButton = $('<button>');
     this.offButton.text('X');
+    this.offButton.addClass('close-modal');
 
     this.offButton.on('click', () => {
       this.newModal.css('display', 'none');
       this.overlay.css('display', 'none');
     });
 
-    this.newModal.append(this.offButton);
+    this.newModal.prepend(this.offButton);
 
     $('body').append(this.overlay);
     $('body').append(this.newModal);
