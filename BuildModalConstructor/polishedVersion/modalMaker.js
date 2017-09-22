@@ -28,7 +28,6 @@
     }
 
     showModal() {
-      console.log('Works');
       if (!this.state.visible) {
         $('body').append(this.overlay);
         $('body').append(this.newModal);
