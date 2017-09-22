@@ -1,14 +1,15 @@
 (function() {
   class modalMaker {
-    constructor($elm) {
-      this.buildModal($elm);
+    constructor(elm) {
+      this.elm = elm;
       this.state = { visible: false };
+      this.buildModal();
     }
 
-    buildModal($elm) {
+    buildModal() {
       this.newModal = $('<div>');
       this.newModal.attr('id', 'my-modal');
-      this.newModal.append($($elm).css('display', 'block'));
+      this.newModal.append($(this.elm).css('display', 'block'));
 
       this.overlay = $('<div>');
       this.overlay.attr('id', 'my-overlay');
