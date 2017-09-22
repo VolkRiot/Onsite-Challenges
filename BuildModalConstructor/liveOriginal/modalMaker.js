@@ -2,6 +2,7 @@
   class modalMaker {
     constructor($elm) {
       this.buildModal($elm);
+      this.state = { visible: false };
     }
 
     buildModal($elm) {
@@ -17,19 +18,20 @@
       this.offButton.addClass('close-modal');
 
       this.offButton.on('click', () => {
-        this.newModal.css('display', 'none');
-        this.overlay.css('display', 'none');
+        this.newModal.detach();
+        this.overlay.detach();
+        this.state.visible = false;
       });
 
       this.newModal.prepend(this.offButton);
-
-      $('body').append(this.overlay);
-      $('body').append(this.newModal);
     }
 
     showModal() {
-      this.newModal.css('display', 'block');
-      this.overlay.css('display', 'block');
+      console.log('Works');
+      if (!this.state.visible) {
+        $('body').append(this.overlay);
+        $('body').append(this.newModal);
+      }
     }
   }
   window.modalMaker = modalMaker;

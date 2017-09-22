@@ -1,19 +1,18 @@
 #my-modal {
   position: absolute;
-  display: none;
+  display: block;
   border: 2px black solid;
   height: 200px;
   width: 80%;
   top: 10%;
   left: 7%;
-  display: none;
   z-index: 2;
   background-color: white;
   padding: 5% 3% 0 3%;
 }
 
 #my-overlay {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 1;
   background-color: black;
