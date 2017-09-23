@@ -4,11 +4,17 @@
   border: 2px black solid;
   height: 200px;
   width: 80%;
-  top: 10%;
+  top: 20%;
   left: 7%;
   z-index: 2;
   background-color: white;
   padding: 5% 3% 0 3%;
+
+  /*animation-name: modalDropIn;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;*/
+
+  -webkit-animation: modalDropIn 0.2s linear;
 }
 
 #my-overlay {
@@ -21,10 +27,48 @@
   left: 0;
   width: 100%;
   height: 100%;
+
+  /*Can be written like this*/
+
+  /*animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;*/
+
+  /*Or this*/
+
+  animation: fadeIn 0.2s linear;
+
+  /* Specific to systems supported by browser prefix */
+  /* Chrome + Safari */
+  -webkit-animation: fadeIn 0.2s linear;
+  /* Mozilla */
+  -moz-animation: fadeIn 0.2s linear;
+  /* Internet Explorer */
+  -ms-animation: fadeIn 0.2s linear;
+  /* Opera broswer*/
+  -o-animation: fadeIn 0.2s linear;
 }
 
 .close-modal {
   right: -96%;
   position: relative;
   margin-top: -4%;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes modalDropIn {
+  from {
+    top: 5%;
+  }
+  to {
+    top: 20%;
+  }
 }
