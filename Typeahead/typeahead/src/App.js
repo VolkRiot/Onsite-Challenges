@@ -44,6 +44,10 @@ class App extends Component {
     this.setState({ activeSuggestions: newSuggested });
   };
 
+  setSelectedText = (phrase) => {
+    this.setState({inputValue: phrase});
+  }
+
   render() {
     const { inputValue } = this.state;
     return (
@@ -59,7 +63,7 @@ class App extends Component {
               style={{ height: 100, width: 300, backgroundColor: 'white' }}
             >
               {this.state.activeSuggestions.map((phrase, index) => (
-                <div key={index}>
+                <div onClick={() => this.setSelectedText(phrase)} class="autocomplete-item" key={index}>
                   <span style={{color: 'black'}}>{phrase}</span>
                   <br/>
                 </div>
