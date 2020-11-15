@@ -45,7 +45,7 @@ class App extends Component {
   };
 
   setSelectedText = (phrase) => {
-    this.setState({inputValue: phrase});
+    this.setState({inputValue: phrase, activeSuggestions: []});
   }
 
   render() {
